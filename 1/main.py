@@ -18,17 +18,21 @@ def main():
 
 	print('Part 1 result is: ', sum(changeOfFrequencies)) # 493
 
-	acc = 0
-	seen = {acc}
-	part2result = 0
+	seenFrequencies = set()
+	i = 0
+	frequency = 0
 
-	while part2result is 0:
-		for change in changeOfFrequencies:
-			acc += change
-			if acc in seen:
-				part2result = acc
-				break
-			seen.add(acc)
+	while frequency not in seenFrequencies:
+		
+		seenFrequencies.add(frequency)
 
-	print('Part 2 result is: ', part2result) # 413
+		frequency += changeOfFrequencies[i]
+
+		if i < len(changeOfFrequencies)-1:
+			i += 1
+		else: 
+			i = 0
+
+
+	print('Part 2 result is: ', frequency) # 413
 main()
