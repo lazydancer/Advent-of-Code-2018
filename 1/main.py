@@ -1,20 +1,8 @@
-def loadInput(file):
-	inputFile = open(file, 'r')
-	inputArray = []
-
-	for line in inputFile.readlines():
-		if line[0] is '+':
-			inputArray.append(int(line[1:]))
-		elif line[0] is '-':
-			inputArray.append(-1 * int(line[1:]))
-		else:
-			raise ValueError('Value missed + and - values', line)
-
-	return inputArray
-
 def main():
+
+	inputFile = open('day1_input', 'r')
 	
-	changeOfFrequencies = loadInput('day1_input')
+	changeOfFrequencies = [int(line) for line in inputFile.readlines()]
 
 	print('Part 1 result is: ', sum(changeOfFrequencies)) # 493
 
@@ -35,4 +23,5 @@ def main():
 
 
 	print('Part 2 result is: ', frequency) # 413
+
 main()
