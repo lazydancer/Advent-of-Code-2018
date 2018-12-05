@@ -30,17 +30,3 @@ for char in set(inputStr.lower()):
     minimum = len(modString.strip())
 
 print("Part 2:", minimum)
-
-
-
-'''
-previousInput = ""
-while previousInput != inputStr:
-  previousInput = inputStr
-  inputStr = runCycle(inputStr)
-  print(len(inputStr))
-'''
-
-#11477 too high
-#11475 too low
-#11000 too low
