@@ -14,31 +14,27 @@ def readNode(input):
 
 def rootNode(input):
   
-
   childrenCount = input.pop()
   metadataCount = input.pop()
 
+  result = 0
+  meta = 0
+  children = []
+
   if childrenCount is 0:
-    result = 0
     for _ in range(metadataCount):
       result += input.pop()
-    return result
   
-  else:
-    children = []
-    result = 0
-    
+  else:  
     for _ in range(childrenCount):
       children.append(rootNode(input))
 
-    meta = 0
     for _ in range(metadataCount):
       meta = input.pop()
       if meta <= len(children) and meta > 0:
         result += children[meta-1]
-
-    return result
-
+  
+  return result
 
 def main(line):
 
