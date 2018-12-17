@@ -65,16 +65,12 @@ def testSample(sample):
   opCodes = ['addr','addi','mulr','muli','banr','bani','borr','bori','setr','seti','gtir','gtri','gtrr','eqir','eqri','eqrr']
 
  
-
-
   matches = 0
   for opCode in opCodes:
     if after == applyOpCode(instruction, before, opCode):
       matches += 1
       if matches >= 3:
         return True
-
-
 
 def part1(inputSamples):
 
@@ -137,31 +133,16 @@ def part2(inputSamples):
   for instruction in instructions:
     result = applyOpCode(instruction, result, opCodesDic[instruction[0]])
   
-  print(result)
+  print('Part 2:',result[0])
 
 inputSamples = open('input', 'r')
 inputSamples = inputSamples.readlines()
 
-#part1(inputSamples)
+part1(inputSamples)
 
 
 collectedSamples = open('inputPart2', 'r')
 collectedSamples = collectedSamples.readlines()
 part2(collectedSamples)
 
-# 601 too high
-
-
-
-# Devince has 4 registers numbered 0 -> 3
-# Manipulated by instructions containing one of 16 opcodes
-# The registers init at 0
-
-# Instruction contains 4 values
-# opcode, tow inputs (named A and B), output (named C)
-# The ouput is always treated as a register 
-
-# Adds register A and value B, storing result in register C
-# addi 0 7 3
-# Adds register 0 and value 7 to register 3
 
