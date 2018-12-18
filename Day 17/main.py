@@ -5,7 +5,7 @@ class Point(namedtuple('Point', 'x y')):
         return Point(self.x + other.x, self.y + other.y)
 
 
-def print_map(clay, flowing, still, x1=300, x2=700, y1=0, y2=1000):
+def print_map(clay, flowing, still, x1=450, x2=680, y1=0, y2=1000):
     def char(p):
         if p == SPRING:
             return '+'
@@ -78,10 +78,12 @@ def fall(pos, ly, clay, flowing):
 
 def spread(pos, clay, flowing, still):
     temp = set()
+    print(temp)
     pl = spread_r(pos, LEFT, clay, still, temp)
     pr = spread_r(pos, RIGHT, clay, still, temp)
     if not pl and not pr:
         still.update(temp)
+
     else:
         flowing.update(temp)
     return pl, pr
