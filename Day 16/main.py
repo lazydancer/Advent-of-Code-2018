@@ -8,7 +8,7 @@ def applyOpCode(instruction, register, opCode):
   if opCode is 'addi':
     result[C] = result[A] + B
     return result
-     
+  
   if opCode is 'mulr':
     result[C] = result[A] * result[B]
     return result
