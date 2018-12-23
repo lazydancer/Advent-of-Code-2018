@@ -63,7 +63,7 @@ lines = open('input').read().strip().split('\n')
 
 pointer = int(lines.pop(0)[4])
 
-register = [0,0,0,0,0,0]
+register = [1,0,0,0,0,0]
 
 instructions = {}
 for i, line in enumerate(lines):
@@ -74,8 +74,8 @@ for i, line in enumerate(lines):
 
 
 i = 0
-while register[pointer] < len(lines):
-#for _ in range(10000):
+#while register[pointer] < len(lines):
+for _ in range(20):
 
   operation, parameters =  instructions[register[pointer]]
   
